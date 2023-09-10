@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "재귀"
+---
+##재귀 함수
+모든 재귀함수는 기본 단계와 재귀 단계라는 두 부분으로 나뉘어져 있다.
+재귀 단계는 함수가 자기 자신을 호출하는 부분이다.
+기본 단계는 함수가 자기 자신을 다시 호출하지 않는 경우, 즉 무한 반복으로 빠져들지 않게 하는 부분이다.
+
+def countdown(i):
+  print i 
+  if i <= 1:
+    return
+  else:
+    countdown(i-1)
+
+  i를 출력한다.
+  만약 i가 1보다 작거나 같으면 종료. (기본 단계)
+  i가 1보다 크다면 i-1을 countdown함수에 다시 넣어서 호출. (재귀 단계)
+  
+## 스택
+푸시(PUSH): 가장 위에 새 항목을 추가한다.
+팝(POP): 가장 위의 항목을 떼어내고 읽는다.
+
+def greet(name):
+  print "hello, " + name + "!"
+  greet2(name)
+  print "getting ready to say bye..."
+  bye()
+
+  1. greet라는 함수가 호출.
+  2. greet 위로 greet2라는 함수가 호출.
+  3. greet2 함수가 실행이 끝나서 반환.
+  4. greet 위로 bye 함수가 호출.
+  5. bye 함수가 실행이 끝나서 반환.
+  6. greet 함수도 반환.
+  
